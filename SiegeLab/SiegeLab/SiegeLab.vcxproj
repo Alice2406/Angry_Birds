@@ -144,12 +144,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GameEntity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ObjectPool.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SiegeLab_Library\SiegeLab_Library.vcxproj">
       <Project>{c034a437-ebea-479c-aa26-67f6f45dbca7}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EntityId.h" />
+    <ClInclude Include="GameEntity.h" />
+    <ClInclude Include="ObjectPool.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
