@@ -5,6 +5,7 @@
 
 #include "raylib.h"
 
+
 void Game::Run()
 {
 	// Tell the window to use vsync and work on high DPI displays
