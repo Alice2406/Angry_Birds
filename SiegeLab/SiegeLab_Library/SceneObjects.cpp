@@ -39,10 +39,18 @@ namespace siegelablib
 
     GameEntity* siegelablib::SceneObjects::get(EntityId id)
     {
-        if (id.slot < 0 || id.slot > MaxEntities || entities_[id.slot] == nullptr || generations_[id.slot] != id.generation)
+        if (id.slot < 0 || id.slot > MaxEntities || entities_[id.slot] == nullptr 
+            || generations_[id.slot] != id.generation)
             return nullptr;
 
         return entities_[id.slot];
+    }
+
+    void SceneObjects::markForRemoval(EntityId id)
+    {
+        if (id.slot >= 0 && id.slot < MaxEntities && entities_[id.slot] != nullptr 
+            && generations_[id.slot] == id.generation) 
+                toRemove_[id.slot] = true;
     }
 
     void siegelablib::SceneObjects::flushRemovals()

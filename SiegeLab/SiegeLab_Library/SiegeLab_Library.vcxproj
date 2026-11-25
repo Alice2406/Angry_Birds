@@ -153,24 +153,29 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="..\SiegeLab\EntityId.h" />
-    <ClInclude Include="..\SiegeLab\GameEntity.h" />
-    <ClInclude Include="..\SiegeLab\ObjectPool.h" />
-    <ClInclude Include="..\SiegeLab\SceneObjects.h" />
+    <ClInclude Include="EntityId.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameEntity.h" />
+    <ClInclude Include="InputController.h" />
+    <ClInclude Include="Launcher.h" />
+    <ClInclude Include="ObjectPool.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="SceneObjects.h" />
+    <ClInclude Include="ShotSettings.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\SiegeLab\GameEntity.cpp" />
-    <ClCompile Include="..\SiegeLab\SceneObjects.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameEntity.cpp" />
+    <ClCompile Include="InputController.cpp" />
+    <ClCompile Include="Launcher.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="SceneObjects.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cyclone\Cyclone.vcxproj">
