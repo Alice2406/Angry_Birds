@@ -1,8 +1,10 @@
-#pragma once
+#ifndef SIEGELAB_LIBRARY_ENTITY_H_
+#define SIEGELAB_LIBRARY_ENTITY_H_
 
-namespace siegelab {
-
-    struct EntityId {
+namespace siegelablib
+{
+    struct EntityId
+    {
         int slot = -1;
         int generation = 0;
 
@@ -13,3 +15,5 @@ namespace siegelab {
     };
 
 }
+
+#endif

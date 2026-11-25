@@ -1,12 +1,15 @@
-#pragma once
+#ifndef SIEGELAB_LIBRARY_OBJECTPOOL_H_
+#define SIEGELAB_LIBRARY_OBJECTPOOL_H_
 
 #include "EntityId.h"
 #include <array>
 #include <optional>
 
-namespace siegelab {
+namespace siegelablib
+{
     template <typename T, int Capacity>
-    class ObjectPool {
+    class ObjectPool
+    {
     public:
         EntityId create(const T& item) 
         {
@@ -74,3 +77,4 @@ namespace siegelab {
     };
 
 }
+#endif
