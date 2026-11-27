@@ -14,10 +14,17 @@ namespace siegelablib
 
     SceneObjects::~SceneObjects()
     {
-        for (int i = 0; i < MaxEntities; i++)
-        {
-            delete entities_[i];
-            entities_[i] = nullptr;
+        clear();
+    }
+
+    void SceneObjects::clear() {
+        for (int i = 0; i < MaxEntities; ++i) {
+            if (entities_[i] != nullptr) {
+                delete entities_[i];
+                entities_[i] = nullptr;
+            }
+            toRemove_[i] = false;
+            ++generations_[i];
         }
     }
 
@@ -55,13 +62,29 @@ namespace siegelablib
 
     void siegelablib::SceneObjects::flushRemovals()
     {
-        for (int i = 0; i < MaxEntities; ++i) {
-            if (toRemove_[i] && entities_[i] != nullptr) {
+        for (int i = 0; i < MaxEntities; ++i) 
+        {
+            if (toRemove_[i] && entities_[i] != nullptr) 
+            {
                 delete entities_[i];
                 entities_[i] = nullptr;
                 ++generations_[i];
                 toRemove_[i] = false;
             }
         }
+    }
+
+    void SceneObjects::updateAll(float dt)
+    {
+        for (int i = 0; i < MaxEntities; ++i) 
+            if (entities_[i] != nullptr) 
+                entities_[i]->update(dt);
+    }
+
+    void SceneObjects::drawAll() 
+    {
+        for (int i = 0; i < MaxEntities; ++i) 
+            if (entities_[i] != nullptr) 
+                entities_[i]->draw();
     }
 }

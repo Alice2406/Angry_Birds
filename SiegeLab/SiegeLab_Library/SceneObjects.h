@@ -27,6 +27,10 @@ namespace siegelablib
         GameEntity* get(EntityId id);
         void markForRemoval(EntityId id);
         void flushRemovals();
+        void clear();
+
+        void updateAll(float dt);
+        void drawAll();
 
     private:
         GameEntity* entities_[MaxEntities];
