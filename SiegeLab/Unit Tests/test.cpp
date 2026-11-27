@@ -144,3 +144,9 @@ TEST(SceneObjectsTests, GO06_ConstrainedFactoryChecksType) {
     siegelablib::EntityId id = scene.createEntity<DummyProjectileA>();
     EXPECT_NE(scene.get(id), nullptr);
 }
+
+TEST(BlockTest , C001)
+{
+    
+    
+}
