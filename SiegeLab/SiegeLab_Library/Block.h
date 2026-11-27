@@ -7,12 +7,12 @@ namespace  siegelablib
 {
   
 
-class Block : public siegelablib::GameEntity
+class Block : public GameEntity
 {
 public:
   cyclone::CollisionBox collision_box;
   
-  void draw() override;
-  void registerPhysicsWorld(cyclone::World);
+  virtual  void draw();
+  virtual void registerPhysicsWorld(cyclone::World& world) = 0;
 };
 }

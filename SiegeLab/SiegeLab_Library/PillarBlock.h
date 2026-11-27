@@ -5,9 +5,10 @@ namespace siegelablib
 {
   
 
-class  : public siegelablib::Block
+class PillarBlock : public siegelablib::Block
 {
 public:
+  PillarBlock();
   void configurePhysics();
 };
 }
